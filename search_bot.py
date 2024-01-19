@@ -1,18 +1,17 @@
 from selenium import webdriver
 import chromedriver_autoinstaller
+from selenium.webdriver.common.keys import Keys
 import time
 
 chromedriver_autoinstaller.install()
 
 driver = webdriver.Chrome()
-driver.get("https://www2.hm.com/en_in/divided/shop-by-product/shoes.html")
+driver.get("https://www.google.com")
 
-driver.find_element_by_xpath("""//*[@id="onetrust-accept-btn-handler"]""").click()
-driver.find_element_by_xpath("""//*[@id="page-content"]/div/div[2]/ul/li/article/div[1]/a/img""").click()
-
-
-# name = driver.find_element(By.XPATH, """//*[@id="page-content"]/div/div[2]/ul/li/article/div[2]/h3/a""")
-# print(name.text)  # Use .text to get the text content of the element
+user_input = driver.find_element_by_xpath("""//*[@id="APjFqb"]""")
+user_input.send_keys("mycyberbase")
+driver.find_element_by_xpath("""/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]""").click()
+driver.find_element_by_xpath("""//*[@id="rso"]/div[1]/div/div/div/div/div/div/div[1]/div/span/a/h3""").click()
 
 
 
